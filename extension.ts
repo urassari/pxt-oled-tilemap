@@ -40,7 +40,7 @@ let cam_y: number = 0
 
     //% block
     export function is_collision(x1: number, y1: number, x2: number, y2: number, x3: number, y3: number, x4: number, y4: number) {
-        return x1 + (x2 - x1) > x3 && x2 - (x2 - x1) < x4 && (y1 + (y2 - y1) > y3 && y2 - (y2 - y1) < y4)
+        return x1 + (x2 - x1 - 1) > x3 && x2 - (x2 - x1 - 1) < x4 && (y1 + (y2 - y1 - 1) > y3 && y2 - (y2 - y1 - 1) < y4)
     }
 
     //%block
