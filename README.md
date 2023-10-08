@@ -1,4 +1,6 @@
 
+props to MKleinSB for the oled extension, everthing else made by me
+
 > Open this page at [https://urassari.github.io/pxt-oled-tilemap/](https://urassari.github.io/pxt-oled-tilemap/)
 
 ## Use as Extension
