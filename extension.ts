@@ -26,7 +26,7 @@ let cam_y: number = 0
 
     //% block
     export function get_tilemap(x: number, y: number): Image {
-        return tilemap_tiles.get(parseInt(tilemap_layout[x].charAt(y)))
+        return tilemap_tiles.get(parseInt(tilemap_layout[y].charAt(x)))
     }
 
     //% block
