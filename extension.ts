@@ -33,7 +33,7 @@ let cam_y: number = 0
     export function draw_tilemap(){
         for (let x = 0; x < tilemap_layout.length; x++) {
             for (let y = 0; y < 5; y++) {
-                kitronik_VIEW128x64.writeImageOLED(tilemap.get_tilemap(x, y), x*8+cam_x, y*8+cam_y)
+                kitronik_VIEW128x64.writeImageNoBackOLED(tilemap.get_tilemap(x, y), x*8+cam_x, y*8+cam_y)
             }
         }
     }
