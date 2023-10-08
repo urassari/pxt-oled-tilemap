@@ -59,4 +59,9 @@ let cam_y: number = 0
 
     }
 
+    //% block
+    export function the_colliding_tile_image(xs: number, ys: number) {
+        return tilemap.get_tilemap(Math.floor(xs/8), Math.floor(ys/8))
+    }
+
 }
