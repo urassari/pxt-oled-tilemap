@@ -79,4 +79,8 @@ let cam_y: number = 0
         tilemap_layout[y] = replaceCharacter(tilemap_layout[y], x, rep)
     }
 
+    //% block
+    export function remove_block(indx: number) {
+        tilemap_tiles.splice(indx, 1)
+    }
 }
