@@ -61,7 +61,7 @@ let cam_y: number = 0
 
     //% block
     export function the_colliding_tile_image(xs: number, ys: number) {
-        return tilemap.get_tilemap(xs, ys)
+        return tilemap.get_tilemap(Math.round(xs / 8), Math.round(ys / 8))
     }
 
 }
