@@ -6,11 +6,11 @@ let cam_x: number = 0
 let cam_y: number = 0
 
     function replaceCharacter(str: string, index: number, replacement: string) {
-        return (
             str.slice(0, index) +
             replacement +
             str.slice(index + replacement.length)
-        );
+            return str
+
     }
 
 
