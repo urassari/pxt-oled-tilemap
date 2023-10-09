@@ -4,6 +4,16 @@ let tilemap_tiles: Image[] = []
 let tilemap_layout: string[] = []
 let cam_x: number = 0
 let cam_y: number = 0
+
+    function replaceCharacter(str: string, index: number, replacement: string) {
+        return (
+            str.slice(0, index) +
+            replacement +
+            str.slice(index + replacement.length)
+        );
+    }
+
+
     //% block
     export function set_blocks (list: Image[]) {
     tilemap_tiles = list
@@ -62,6 +72,11 @@ let cam_y: number = 0
     //% block
     export function the_colliding_tile_image(xs: number, ys: number) {
         return tilemap.get_tilemap(Math.round(xs / 8), Math.round(ys / 8))
+    }
+
+    //% block
+    export function replace_tile(x: number, y: number, rep: string) {
+        tilemap_layout[y] = replaceCharacter(tilemap_layout[y], x, rep)
     }
 
 }
