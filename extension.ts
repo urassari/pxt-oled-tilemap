@@ -35,15 +35,15 @@ let cam_y: number = 0
     }
 
     //% block
-    export function get_tilemap(x: number, y: number): number {
-        return parseInt(tilemap_layout[y].charAt(x))
+    export function get_tilemap(x: number, y: number): string {
+        return (tilemap_layout[y].charAt(x))
     }
 
     //% block
     export function draw_tilemap(){
         for (let x = 0; x < tilemap_layout[0].length; x++) {
             for (let y = 0; y < tilemap_layout.length; y++) {
-                kitronik_VIEW128x64.writeImageNoBackOLED(tilemap_tiles.get(tilemap.get_tilemap(x, y)), x*8+cam_x, y*8+cam_y)
+                kitronik_VIEW128x64.writeImageNoBackOLED(tilemap_tiles.get(tilemap.get_tilemap(x, y).charCodeAt(0) + 48), x*8+cam_x, y*8+cam_y)
             }
         }
     }
