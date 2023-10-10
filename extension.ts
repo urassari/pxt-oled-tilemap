@@ -49,6 +49,11 @@ let cam_y: number = 0
         return x1 + (x2 - x1) > x3 && x2 - (x2 - x1) < x4 && (y1 + (y2 - y1) > y3 && y2 - (y2 - y1) < y4)
     }
 
+    //% block
+    export function is_x_y_touching_tile(x: number, y: number, xt: number, yt: number) {
+        return tilemap.is_collision(x, y, x+8, y+8, xt/8, yt/8, xt/8-8, yt/8-8)
+    }
+
     //%block
     export function set_camera(x: number, y: number) {
     
