@@ -579,6 +579,19 @@ namespace kitronik_VIEW128x64 {
         return im
     }
 
+    //% block="Bild128x64"
+    //% imageLiteral=1
+    //% imageLiteralColumns=128
+    //% imageLiteralRows=64
+    //% imageLiteralScale=0.01
+    //% shim=images::createImage
+    //% weight=50
+    //% subcategory=paint
+    export function matrix128x64(i: string): Image {
+        const im = <Image><any>i;
+        return im
+    }
+
     //% imageLiteral=1
     //% imageLiteralColumns=6
     //% imageLiteralRows=24
