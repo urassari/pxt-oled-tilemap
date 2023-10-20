@@ -4,11 +4,26 @@ let tilemap_tiles: Image[] = []
 let tilemap_layout: string[] = []
 let cam_x: number = 0
 let cam_y: number = 0
-
+let ax = 0
+let ay = 0
+let aax = 0
+let aay = 0
     function replaceCharacter(str: string, index: number, replacement: string) {
     return str.substr(0, index) + replacement + str.substr(index + replacement.length)
     }
 
+    //% block
+    export function draw_line(x: number, y: number, x1: number, y1: number) {
+        aax = (x1 - x) / (x1 - x + (y1 - y))
+        aay = (y1 - y) / (x1 - x + (y1 - y))
+        ax = x
+        ay = y
+        for (let index = 0; index < x1 - x + (y1 - y); index++) {
+            kitronik_VIEW128x64.setPixelbuffer(Math.round(ax), Math.round(ay))
+            ax += aax
+            ay += aay
+        }
+    }
 
     //% block
     export function set_blocks (list: Image[]) {
