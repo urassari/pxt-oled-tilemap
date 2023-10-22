@@ -22,5 +22,14 @@ export function draw_sprites(){
     }
 }
 
+//% block
+export function get_sprite_data(indx: number, data: number){
+    return sprite_data[indx][data]
+}
+
+//% block
+export function replace_sprite_data(indx: number, data: number, replation: string){
+    sprite_data[indx][data] = replation
+}
 
 }
