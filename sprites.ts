@@ -1,5 +1,5 @@
 //% color=#d6b10b weight=100 icon=""
-namespace NOT_DONE {
+namespace NOT_DONE_DONT_OPEN {
 let sprite_icons: Image[] = []
 let sprite_data: String[][] = [[]]
 
