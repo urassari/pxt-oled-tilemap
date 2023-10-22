@@ -1,7 +1,7 @@
 //% color=#d6b10b weight=100 icon=""
 namespace sprites_beta {
 let sprite_icons: Image[] = []
-let sprite_data: string[][] = [[]]
+let sprite_data: string[][] = []
 
 //% block
 export function add_sprite(image: Image, data: string[]) {
