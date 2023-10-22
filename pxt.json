@@ -10,7 +10,8 @@
         "main.ts",
         "README.md",
         "extension.ts",
-        "draw.ts"
+        "draw.ts",
+        "sprites.ts"
     ],
     "testFiles": [
         "test.ts"
