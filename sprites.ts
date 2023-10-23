@@ -35,4 +35,10 @@ export function replace_sprite_data(indx: string, data: number, replation: strin
     sprite_data[sprite_name.indexOf(indx)][data] = replation
 }
 
+//% block
+export function set_sprite_image(indx: string, image: Image){
+    sprite_icons[sprite_name.indexOf(indx)] = image
+}
+
+
 }
