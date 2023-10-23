@@ -2,17 +2,20 @@
 namespace sprites_beta {
 let sprite_icons: Image[] = []
 let sprite_data: string[][] = []
+let sprite_name: string[] = []
 
 //% block
-export function add_sprite(image: Image, data: string[]) {
+export function add_sprite(image: Image, data: string[], name: string) {
     sprite_icons.push(image)
     sprite_data.push(data)
+    sprite_name.push(name)
 }
 
 //% block
-export function delete_sprite(indx: number) {
-    sprite_icons.splice(indx, 1)
-    sprite_data.splice(indx, 1)
+export function delete_sprite(indx: string) {
+    sprite_icons.splice(sprite_name.indexOf(indx), 1)
+    sprite_data.splice(sprite_name.indexOf(indx), 1)
+    sprite_name.splice(sprite_name.indexOf(indx), 1)
 }
 
 //% block
@@ -23,13 +26,13 @@ export function draw_sprites(){
 }
 
 //% block
-export function get_sprite_data(indx: number, data: number){
-    return sprite_data[indx][data]
+export function get_sprite_data(indx: string, data: number){
+    return sprite_data[sprite_name.indexOf(indx)][data]
 }
 
 //% block
-export function replace_sprite_data(indx: number, data: number, replation: string){
-    sprite_data[indx][data] = replation
+export function replace_sprite_data(indx: string, data: number, replation: string){
+    sprite_data[sprite_name.indexOf(indx)][data] = replation
 }
 
 }
