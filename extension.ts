@@ -14,11 +14,11 @@ let aay = 0
 
     //% block
     export function draw_line(x: number, y: number, x1: number, y1: number) {
-        aax = (x1 - x) / (x1 - x + (y1 - y))
-        aay = (y1 - y) / (x1 - x + (y1 - y))
+        aax = (x1 - x) / ((x1 - x) + (y1 - y))
+        aay = (y1 - y) / ((x1 - x) + (y1 - y))
         ax = x
         ay = y
-        for (let index = 0; index < Math.abs(x1 - x + (y1 - y)); index++) {
+        for (let index = 0; index < Math.abs((x1 - x) + (y1 - y)); index++) {
             kitronik_VIEW128x64.setPixelbuffer(Math.round(ax), Math.round(ay))
             ax += aax
             ay += aay
