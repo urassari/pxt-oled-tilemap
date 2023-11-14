@@ -8,6 +8,9 @@ let ax = 0
 let ay = 0
 let aax = 0
 let aay = 0
+let tilex = 8
+let tiley = 8
+
     function replaceCharacter(str: string, index: number, replacement: string) {
     return str.substr(0, index) + replacement + str.substr(index + replacement.length)
     }
@@ -54,7 +57,7 @@ let aay = 0
     export function draw_tilemap(){
         for (let x = 0; x < tilemap_layout[0].length; x++) {
             for (let y = 0; y < tilemap_layout.length; y++) {
-                kitronik_VIEW128x64.writeImageNoBackOLED(tilemap_tiles.get(tilemap.get_tilemap(x, y).charCodeAt(0) - 32), x*8+cam_x, y*8+cam_y)
+                kitronik_VIEW128x64.writeImageNoBackOLED(tilemap_tiles.get(tilemap.get_tilemap(x, y).charCodeAt(0) - 32), x*tilex+cam_x, y*tiley+cam_y)
             }
         }
     }
@@ -66,7 +69,7 @@ let aay = 0
 
     //% block
     export function is_x_y_touching_tile(x: number, y: number, xt: number, yt: number) {
-        return tilemap.is_collision(x, y, x+8, y+8, xt/8, yt/8, xt/8+8, yt/8+8)
+        return tilemap.is_collision(x, y, x+tilex, y+tiley, xt/tilex, yt/tiley, xt/tilex+tilex, yt/tiley+tiley)
     }
 
     //%block
@@ -87,7 +90,7 @@ let aay = 0
 
     //% block
     export function the_colliding_tile_image(xs: number, ys: number) {
-        return tilemap.get_tilemap(Math.floor(xs / 8), Math.floor(ys / 8))
+        return tilemap.get_tilemap(Math.floor(xs / tilex), Math.floor(ys / tiley))
     }
 
     //% block
@@ -98,5 +101,11 @@ let aay = 0
     //% block
     export function remove_block(indx: number) {
         tilemap_tiles.splice(indx, 1)
+    }
+
+    //% block
+    export function set_tile_size(x: number, y: number){
+        tilex = x
+        tiley = y
     }
 }
