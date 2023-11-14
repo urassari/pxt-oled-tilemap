@@ -19,7 +19,7 @@ export function delete_sprite(indx: string) {
 }
 
 //% block
-export function draw_sprites(){
+export function sprite_frame(){
     for (let i = 0; i < sprite_icons.length; i++) {
         kitronik_VIEW128x64.writeImageNoBackOLED(sprite_icons[i], parseInt(sprite_data[i][0]), parseInt(sprite_data[i][1]))
     }

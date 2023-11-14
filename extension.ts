@@ -24,7 +24,7 @@ let tiley = 8
         for (let index = 0; index < Math.abs((x1 - x) + (y1 - y)); index++) {
             kitronik_VIEW128x64.setPixelbuffer(Math.round(ax), Math.round(ay))
             ax = ax + aax
-            ay = ax + aay
+            ay = ay + aay
         }
     }
 
