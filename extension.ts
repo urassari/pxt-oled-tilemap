@@ -16,44 +16,8 @@ let tiley = 8
     }
 
     //% block
-    export function draw_line(x1: number, y1: number, x2: number, y2: number, decide: number) {
-        // pk is initial decision making parameter 
-        // Note:x1&y1,x2&y2, dx&dy values are interchanged 
-        // and passed in plotPixel function so 
-        // it can handle both cases when m>1 & m<1 
-        let pk = 2 * Math.abs(y2 - y1) - Math.abs(x2 - x1);
-        for (let i = 0; i <= Math.abs(x2 - x1); i++) {
-            if (decide == 0) {
-                kitronik_VIEW128x64.setPixelbuffer(x1, y1)
-            }
-            else {
-                kitronik_VIEW128x64.setPixelbuffer(y1, x1)
-            }
-
-            // checking either to decrement or increment the 
-            // value if we have to plot from (0,100) to 
-            // (100,0) 
-            if (x1 < x2)
-                x1++;
-            else
-                x1--;
-            if (pk < 0) {
-                // decision value will decide to plot 
-                // either x1 or y1 in x's position 
-                if (decide == 0) {
-                    pk = pk + 2 * Math.abs(y2 - y1);
-                }
-                else
-                    pk = pk + 2 * Math.abs(y2 - y1);
-            }
-            else {
-                if (y1 < y2)
-                    y1++;
-                else
-                    y1--;
-                pk = pk + 2 * Math.abs(y2 - y1) - 2 * Math.abs(x2 - x1);
-            }
-        }
+    export function draw_line(x1: number, y1: number, x2: number, y2: number) {
+        //soon!
     }
 
     //% block
