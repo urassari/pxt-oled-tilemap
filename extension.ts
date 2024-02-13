@@ -17,8 +17,8 @@ let tiley = 8
 
     //% block
     export function draw_line(x: number, y: number, x1: number, y1: number) {
-        aax = (x1 - x) / ((x1 - x) + (y1 - y))
-        aay = (y1 - y) / ((x1 - x) + (y1 - y))
+        aax = (x1 - x) / Math.sqrt((x1 - x) + (y1 - y))
+        aay = (y1 - y) / Math.sqrt((x1 - x) + (y1 - y))
         ax = x
         ay = y
         for (let index = 0; index < (x1 - x) + (y1 - y); index++) {
