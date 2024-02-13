@@ -21,7 +21,7 @@ let tiley = 8
         aay = (y1 - y) / ((x1 - x) + (y1 - y))
         ax = x
         ay = y
-        for (let index = 0; index < Math.abs((x1 - x) + (y1 - y)); index++) {
+        for (let index = 0; index < (x1 - x) + (y1 - y); index++) {
             kitronik_VIEW128x64.setPixelbuffer(Math.round(ax), Math.round(ay))
             ax = ax + (aax)
             ay = ay + (aay)
