@@ -652,7 +652,7 @@ namespace kitronik_VIEW128x64 {
     export function writeImageOLED(im: Image, xpos: number, ypos: number) {
         for (let y = 0; y <= im.height() - 1; y++) {
             for (let x = 0; x <= im.width() - 1; x++) {
-                if ((im.pixel(x, y) ? 1 : 0)) {
+                if ((im.pixel(x, y) ? 1 : 0) && xpos < 127 && xpos > 0 && ypos < 63 && ypos > 0) {
                     setPixelbuffer(Math.constrain(x + xpos, 0, 127), Math.constrain(y + ypos, 0, 63))
                 } else
                     clearPixel(Math.constrain(x + xpos, 0, 127), Math.constrain(y + ypos, 0, 63))
