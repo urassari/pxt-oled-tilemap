@@ -36,10 +36,8 @@ export function replace_sprite_data(indx: string, data: number, replation: numbe
 }
 
 //% block
-export function move_sprite_doesnt_work(indx: string, data: number, replation: string) {
-    //let newval: number = parseInt(sprite_data[sprite_name.indexOf(indx)][data]) + parseInt(replation)
-    //sprite_data[sprite_name.indexOf(indx)][data] = newval.toString
-    //eror whoops not fixing haha
+export function move_sprite_doesnt_work(indx: string, data: number, replation: number) {
+    sprite_data[sprite_name.indexOf(indx)][data] = replation
 }
 
 //% block
