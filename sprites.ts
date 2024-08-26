@@ -36,8 +36,8 @@ export function replace_sprite_data(indx: string, data: number, replation: numbe
 }
 
 //% block
-export function move_sprite_doesnt_work(indx: string, data: number, replation: number) {
-    sprite_data[sprite_name.indexOf(indx)][data] = replation
+export function move_sprite(indx: string, data: number, replation: number) {
+    sprite_data[sprite_name.indexOf(indx)][data] += replation
 }
 
 //% block
