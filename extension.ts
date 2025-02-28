@@ -49,7 +49,9 @@ let tiley = 8
     export function draw_tilemap(){
         for (let x = 0; x < tilemap_layout[0].length; x++) {
             for (let y = 0; y < tilemap_layout.length; y++) {
-                kitronik_VIEW128x64.writeImageNoBackOLED(tilemap_tiles.get(tilemap.get_tilemap(x, y).charCodeAt(0) - 32), x*tilex+cam_x, y*tiley+cam_y)
+                if (tilemap.get_tilemap(x, y) != " ") {
+                    kitronik_VIEW128x64.writeImageNoBackOLED(tilemap_tiles.get(tilemap.get_tilemap(x, y).charCodeAt(0) - 32), x * tilex + cam_x, y * tiley + cam_y)
+                }
             }
         }
     }
